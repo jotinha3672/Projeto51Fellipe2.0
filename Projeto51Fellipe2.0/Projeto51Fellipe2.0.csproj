@@ -94,6 +94,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceitaCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReceitaCard.Designer.cs">
+      <DependentUpon>ReceitaCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositorio.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -107,6 +113,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReceitaCard.resx">
+      <DependentUpon>ReceitaCard.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

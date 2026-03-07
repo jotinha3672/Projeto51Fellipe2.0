@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Sql;
 
 namespace Projeto51Fellipe2._0
 {
@@ -44,15 +45,45 @@ namespace Projeto51Fellipe2._0
             StringSplitOptions.RemoveEmptyEntries)
             .ToList();
 
-            dataGridView1.DataSource = _r.BuscarPorIngredientes(ingredientes);
+            DataTable dt = _r.BuscarPorIngredientes(ingredientes);
+            CarregarCards(dt);
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+
+
         }
 
-        private void Barra_TextChanged(object sender, EventArgs e)
+        private void CarregarCards(DataTable receitas)
         {
+            flowLayoutPanel1.Controls.Clear();
 
+            foreach (DataRow row in receitas.Rows)
+            {
+                ReceitaCard card = new ReceitaCard();
+
+                byte[] img = null;
+
+                if (row["foto"] != DBNull.Value)
+                {
+                    img = (byte[])row["Foto"];
+                }
+
+                card.SetDados(
+                    row["Nome_Receita"].ToString(),
+                    row["Descricao"].ToString(),
+                    row["Tempo_Preparo"].ToString(),
+                    img
+                );
+
+                flowLayoutPanel1.Controls.Add(card);
+            }
         }
+
+        //public void Barra_TextChanged(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }
+
