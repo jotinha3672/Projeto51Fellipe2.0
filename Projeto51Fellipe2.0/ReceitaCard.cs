@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace Projeto51Fellipe2._0
 {
@@ -16,6 +17,7 @@ namespace Projeto51Fellipe2._0
         public ReceitaCard()
         {
             InitializeComponent();
+            ArredondarCantos(30);
         }
 
         public void SetDados(string nome, string descricao, string tempo, byte[] imagemBytes)
@@ -36,6 +38,24 @@ namespace Projeto51Fellipe2._0
                     pictureBox1.Image = Image.FromStream(ms);
                 }
             }
+        }
+        private void ArredondarCantos(int raio)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+
+            path.AddArc(new Rectangle(0, 0, raio, raio), 180, 90);
+            path.AddArc(new Rectangle(this.Width - raio, 0, raio, raio), 270, 90);
+            path.AddArc(new Rectangle(this.Width - raio, this.Height - raio, raio, raio), 0, 90);
+            path.AddArc(new Rectangle(0, this.Height - raio, raio, raio), 90, 90);
+
+            path.CloseFigure();
+
+            this.Region = new Region(path);
+        }
+        private void ReceitaCard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

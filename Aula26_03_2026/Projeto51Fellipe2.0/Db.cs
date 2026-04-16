@@ -11,7 +11,7 @@ namespace Projeto51Fellipe2._0
     {
         private const string stringconexao =
 
-            "Server=localhost;Port=3306;Database=savora51_2;User ID=root;Password=";
+            "Server=localhost;Port=3306;Database=savora51;User ID=root;Password=";
 
         public static MySqlConnection Conecta()
 
