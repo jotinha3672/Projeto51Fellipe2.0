@@ -43,8 +43,10 @@ namespace Projeto51Fellipe2._0
             this.cbVegano = new System.Windows.Forms.CheckBox();
             this.cbSemLactose = new System.Windows.Forms.CheckBox();
             this.cbSemGluten = new System.Windows.Forms.CheckBox();
-            this.rbPratoPrincipal = new System.Windows.Forms.RadioButton();
+            this.rbAlmoco = new System.Windows.Forms.RadioButton();
             this.rbCafeTarde = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.rbJantar = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +86,7 @@ namespace Projeto51Fellipe2._0
             // rbCafe
             // 
             this.rbCafe.AutoSize = true;
-            this.rbCafe.Location = new System.Drawing.Point(33, 240);
+            this.rbCafe.Location = new System.Drawing.Point(33, 253);
             this.rbCafe.Name = "rbCafe";
             this.rbCafe.Size = new System.Drawing.Size(97, 17);
             this.rbCafe.TabIndex = 5;
@@ -95,7 +97,7 @@ namespace Projeto51Fellipe2._0
             // rbSobremesa
             // 
             this.rbSobremesa.AutoSize = true;
-            this.rbSobremesa.Location = new System.Drawing.Point(33, 306);
+            this.rbSobremesa.Location = new System.Drawing.Point(33, 321);
             this.rbSobremesa.Name = "rbSobremesa";
             this.rbSobremesa.Size = new System.Drawing.Size(78, 17);
             this.rbSobremesa.TabIndex = 6;
@@ -106,7 +108,7 @@ namespace Projeto51Fellipe2._0
             // rbRapido
             // 
             this.rbRapido.AutoSize = true;
-            this.rbRapido.Location = new System.Drawing.Point(33, 339);
+            this.rbRapido.Location = new System.Drawing.Point(33, 389);
             this.rbRapido.Name = "rbRapido";
             this.rbRapido.Size = new System.Drawing.Size(87, 17);
             this.rbRapido.TabIndex = 7;
@@ -117,7 +119,7 @@ namespace Projeto51Fellipe2._0
             // rbAte30
             // 
             this.rbAte30.AutoSize = true;
-            this.rbAte30.Location = new System.Drawing.Point(33, 405);
+            this.rbAte30.Location = new System.Drawing.Point(33, 457);
             this.rbAte30.Name = "rbAte30";
             this.rbAte30.Size = new System.Drawing.Size(95, 17);
             this.rbAte30.TabIndex = 8;
@@ -128,7 +130,7 @@ namespace Projeto51Fellipe2._0
             // rb30a60
             // 
             this.rb30a60.AutoSize = true;
-            this.rb30a60.Location = new System.Drawing.Point(33, 438);
+            this.rb30a60.Location = new System.Drawing.Point(33, 491);
             this.rb30a60.Name = "rb30a60";
             this.rb30a60.Size = new System.Drawing.Size(128, 17);
             this.rb30a60.TabIndex = 9;
@@ -139,7 +141,7 @@ namespace Projeto51Fellipe2._0
             // rbMais60
             // 
             this.rbMais60.AutoSize = true;
-            this.rbMais60.Location = new System.Drawing.Point(35, 471);
+            this.rbMais60.Location = new System.Drawing.Point(33, 525);
             this.rbMais60.Name = "rbMais60";
             this.rbMais60.Size = new System.Drawing.Size(96, 17);
             this.rbMais60.TabIndex = 10;
@@ -150,7 +152,7 @@ namespace Projeto51Fellipe2._0
             // cbVegetariano
             // 
             this.cbVegetariano.AutoSize = true;
-            this.cbVegetariano.Location = new System.Drawing.Point(33, 92);
+            this.cbVegetariano.Location = new System.Drawing.Point(33, 117);
             this.cbVegetariano.Name = "cbVegetariano";
             this.cbVegetariano.Size = new System.Drawing.Size(83, 17);
             this.cbVegetariano.TabIndex = 11;
@@ -160,7 +162,7 @@ namespace Projeto51Fellipe2._0
             // cbVegano
             // 
             this.cbVegano.AutoSize = true;
-            this.cbVegano.Location = new System.Drawing.Point(33, 125);
+            this.cbVegano.Location = new System.Drawing.Point(33, 151);
             this.cbVegano.Name = "cbVegano";
             this.cbVegano.Size = new System.Drawing.Size(63, 17);
             this.cbVegano.TabIndex = 12;
@@ -170,7 +172,7 @@ namespace Projeto51Fellipe2._0
             // cbSemLactose
             // 
             this.cbSemLactose.AutoSize = true;
-            this.cbSemLactose.Location = new System.Drawing.Point(33, 158);
+            this.cbSemLactose.Location = new System.Drawing.Point(33, 185);
             this.cbSemLactose.Name = "cbSemLactose";
             this.cbSemLactose.Size = new System.Drawing.Size(88, 17);
             this.cbSemLactose.TabIndex = 13;
@@ -180,28 +182,28 @@ namespace Projeto51Fellipe2._0
             // cbSemGluten
             // 
             this.cbSemGluten.AutoSize = true;
-            this.cbSemGluten.Location = new System.Drawing.Point(33, 191);
+            this.cbSemGluten.Location = new System.Drawing.Point(33, 219);
             this.cbSemGluten.Name = "cbSemGluten";
             this.cbSemGluten.Size = new System.Drawing.Size(81, 17);
             this.cbSemGluten.TabIndex = 14;
             this.cbSemGluten.Text = "Sem Gluten";
             this.cbSemGluten.UseVisualStyleBackColor = true;
             // 
-            // rbPratoPrincipal
+            // rbAlmoco
             // 
-            this.rbPratoPrincipal.AutoSize = true;
-            this.rbPratoPrincipal.Location = new System.Drawing.Point(35, 273);
-            this.rbPratoPrincipal.Name = "rbPratoPrincipal";
-            this.rbPratoPrincipal.Size = new System.Drawing.Size(93, 17);
-            this.rbPratoPrincipal.TabIndex = 15;
-            this.rbPratoPrincipal.TabStop = true;
-            this.rbPratoPrincipal.Text = "Prato Principal";
-            this.rbPratoPrincipal.UseVisualStyleBackColor = true;
+            this.rbAlmoco.AutoSize = true;
+            this.rbAlmoco.Location = new System.Drawing.Point(35, 287);
+            this.rbAlmoco.Name = "rbAlmoco";
+            this.rbAlmoco.Size = new System.Drawing.Size(60, 17);
+            this.rbAlmoco.TabIndex = 15;
+            this.rbAlmoco.TabStop = true;
+            this.rbAlmoco.Text = "Almoço";
+            this.rbAlmoco.UseVisualStyleBackColor = true;
             // 
             // rbCafeTarde
             // 
             this.rbCafeTarde.AutoSize = true;
-            this.rbCafeTarde.Location = new System.Drawing.Point(33, 372);
+            this.rbCafeTarde.Location = new System.Drawing.Point(33, 423);
             this.rbCafeTarde.Name = "rbCafeTarde";
             this.rbCafeTarde.Size = new System.Drawing.Size(93, 17);
             this.rbCafeTarde.TabIndex = 17;
@@ -209,13 +211,38 @@ namespace Projeto51Fellipe2._0
             this.rbCafeTarde.Text = "Café da Tarde";
             this.rbCafeTarde.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(33, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 49);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Gerar Cardápio";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // rbJantar
+            // 
+            this.rbJantar.AutoSize = true;
+            this.rbJantar.Location = new System.Drawing.Point(35, 355);
+            this.rbJantar.Name = "rbJantar";
+            this.rbJantar.Size = new System.Drawing.Size(54, 17);
+            this.rbJantar.TabIndex = 19;
+            this.rbJantar.TabStop = true;
+            this.rbJantar.Text = "Jantar";
+            this.rbJantar.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1058, 631);
+            this.Controls.Add(this.rbJantar);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.rbCafeTarde);
-            this.Controls.Add(this.rbPratoPrincipal);
+            this.Controls.Add(this.rbAlmoco);
             this.Controls.Add(this.cbSemGluten);
             this.Controls.Add(this.cbSemLactose);
             this.Controls.Add(this.cbVegano);
@@ -257,8 +284,10 @@ namespace Projeto51Fellipe2._0
         private System.Windows.Forms.CheckBox cbVegano;
         private System.Windows.Forms.CheckBox cbSemLactose;
         private System.Windows.Forms.CheckBox cbSemGluten;
-        private System.Windows.Forms.RadioButton rbPratoPrincipal;
+        private System.Windows.Forms.RadioButton rbAlmoco;
         private System.Windows.Forms.RadioButton rbCafeTarde;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton rbJantar;
     }
 }
 

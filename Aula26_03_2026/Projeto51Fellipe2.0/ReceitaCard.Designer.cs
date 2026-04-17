@@ -35,6 +35,7 @@ namespace Projeto51Fellipe2._0
             this.lblDescricao = new System.Windows.Forms.Label();
             this.lblTempo = new System.Windows.Forms.Label();
             this.btnVerMais = new System.Windows.Forms.Button();
+            this.lblCalorias = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,11 +99,22 @@ namespace Projeto51Fellipe2._0
             this.btnVerMais.UseVisualStyleBackColor = true;
             this.btnVerMais.Click += new System.EventHandler(this.btnVerMais_Click_1);
             // 
+            // lblCalorias
+            // 
+            this.lblCalorias.AutoSize = true;
+            this.lblCalorias.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblCalorias.Location = new System.Drawing.Point(117, 217);
+            this.lblCalorias.Name = "lblCalorias";
+            this.lblCalorias.Size = new System.Drawing.Size(85, 19);
+            this.lblCalorias.TabIndex = 6;
+            this.lblCalorias.Text = "lblCalorias";
+            // 
             // ReceitaCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lblCalorias);
             this.Controls.Add(this.btnVerMais);
             this.Controls.Add(this.lblTempo);
             this.Controls.Add(this.lblDescricao);
@@ -126,5 +138,6 @@ namespace Projeto51Fellipe2._0
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.Label lblTempo;
         private System.Windows.Forms.Button btnVerMais;
+        private System.Windows.Forms.Label lblCalorias;
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySqlConnector;
 using System.Data;
-using System.Data.SqlClient;
+
 
 namespace Projeto51Fellipe2._0
 {
@@ -161,17 +161,17 @@ namespace Projeto51Fellipe2._0
 
                 // BASE DA QUERY
                 string query = @"
-        SELECT r.id_receita, r.Nome_Receita, r.Descricao, 
-               r.Tempo_Preparo, r.Foto, c.tipo
-        FROM receita r
-        INNER JOIN categoria c ON r.Tipo = c.id_categoria
-        LEFT JOIN receitaIgr ri ON r.id_receita = ri.id_receita
-        LEFT JOIN ingrediente i ON ri.id_ingrediente = i.id_ingrediente
-        WHERE 1=1
-        AND (@categoriaId IS NULL OR r.Tipo = @categoriaId)
-        AND (@tempoMin IS NULL OR r.Tempo_Preparo >= @tempoMin)
-        AND (@tempoMax IS NULL OR r.Tempo_Preparo <= @tempoMax)
-        ";
+                    SELECT r.id_receita, r.Nome_Receita, r.Descricao, 
+                       r.Tempo_Preparo, r.Foto, r.calorias, c.tipo
+                    FROM receita r
+                    INNER JOIN categoria c ON r.Tipo = c.id_categoria
+                    LEFT JOIN receitaIgr ri ON r.id_receita = ri.id_receita
+                    LEFT JOIN ingrediente i ON ri.id_ingrediente = i.id_ingrediente
+                    WHERE 1=1
+                    AND (@categoriaId IS NULL OR r.Tipo = @categoriaId)
+                    AND (@tempoMin IS NULL OR r.Tempo_Preparo >= @tempoMin)
+                    AND (@tempoMax IS NULL OR r.Tempo_Preparo <= @tempoMax)
+                    ";
 
                 // 🔥 INGREDIENTES (SÓ SE TIVER)
                 if (ingredientes.Count > 0)
@@ -289,7 +289,7 @@ namespace Projeto51Fellipe2._0
                 conn.Open();
 
                 string sql = @"SELECT r.nome_receita, r.descricao, r.tempo_preparo, 
-                              r.modo_preparo, r.foto, c.tipo AS categoria
+                              r.modo_preparo, r.foto, r.calorias, c.tipo AS categoria
                        FROM receita r
                        INNER JOIN categoria c ON r.Tipo = c.id_categoria
                        WHERE r.id_receita = @id";
@@ -307,10 +307,48 @@ namespace Projeto51Fellipe2._0
                     r.ModoPreparo = reader["modo_preparo"].ToString();
                     r.Imagem = reader["foto"] as byte[];
                     r.Categoria = reader["categoria"].ToString();
+                    r.Calorias = reader["calorias"] != DBNull.Value
+                    ? Convert.ToInt32(reader["calorias"])
+                    : 0;
                 }
             }
 
             return r;
+        }
+        public List<Receita> BuscarPorCategoriaSimples(int categoriaId)
+        {
+            var lista = new List<Receita>();
+
+            using (var conn = Db.Conecta())
+            {
+                conn.Open();
+
+                string sql = @"SELECT id_receita, nome_receita, calorias 
+                       FROM receita
+                       WHERE tipo = @cat";
+
+                using (var cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@cat", categoriaId);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new Receita
+                            {
+                                Id = reader.GetInt32("id_receita"),
+                                Nome = reader.GetString("nome_receita"),
+                                Calorias = reader["calorias"] != DBNull.Value
+                                ? Convert.ToInt32(reader["calorias"])
+                                : 0
+                            });
+                        }
+                    }
+                }
+            }
+
+            return lista;
         }
     }
 }

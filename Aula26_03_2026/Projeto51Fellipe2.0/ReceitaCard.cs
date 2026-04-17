@@ -42,11 +42,11 @@ namespace Projeto51Fellipe2._0
             
         }
 
-        public void SetDados(string nome, string categoria, string descricao, string tempo, byte[] foto)
+        public void SetDados(string nome, string categoria, string descricao, string tempo, byte[] foto, int calorias)
         {
             lblNome.Text = nome;
             lblCategoria.Text = categoria;
-
+            lblCalorias.Text = $"{calorias} kcal";
             lblDescricao.Text = descricao.Length > 80
                 ? descricao.Substring(0, 80) + "..."
                 : descricao;

@@ -96,6 +96,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardapioDia.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Db.cs" />
     <Compile Include="Form1.cs">
@@ -110,12 +111,19 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCardapio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCardapio.Designer.cs">
+      <DependentUpon>FormCardapio.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDetalheReceita.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDetalheReceita.Designer.cs">
       <DependentUpon>FormDetalheReceita.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeradorCardapio.cs" />
     <Compile Include="IngredienteReceita.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,6 +138,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCardapio.resx">
+      <DependentUpon>FormCardapio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDetalheReceita.resx">
       <DependentUpon>FormDetalheReceita.cs</DependentUpon>

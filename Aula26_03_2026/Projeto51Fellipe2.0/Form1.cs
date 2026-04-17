@@ -70,6 +70,14 @@ namespace Projeto51Fellipe2._0
                 {
                     img = (byte[])row["Foto"];
                 }
+
+                int calorias = 0;
+
+                if (row.Table.Columns.Contains("calorias") && row["calorias"] != DBNull.Value)
+                {
+                    calorias = Convert.ToInt32(row["calorias"]);
+                }
+
                 card.IdReceita = Convert.ToInt32(row["id_receita"]);
                 card.SetDados
                 (
@@ -77,7 +85,8 @@ namespace Projeto51Fellipe2._0
                     row["tipo"].ToString(),
                     row["Descricao"].ToString(),
                     row["Tempo_Preparo"].ToString(),
-                    img
+                    img,
+                    calorias
                 );
 
                 flowLayoutPanel1.Controls.Add(card);
@@ -95,7 +104,8 @@ namespace Projeto51Fellipe2._0
             if (rbSobremesa.Checked) return 2;
             if (rbRapido.Checked) return 3;
             if (rbCafeTarde.Checked) return 6;
-            if (rbPratoPrincipal.Checked) return 7;
+            if (rbAlmoco.Checked) return 7;
+            if (rbJantar.Checked) return 8;
 
             return null; // todos
         }
@@ -132,7 +142,12 @@ namespace Projeto51Fellipe2._0
 
             return restricoes;
         }
-
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormCardapio f = new FormCardapio();
+            f.Show();
+        }
     }
 }
 

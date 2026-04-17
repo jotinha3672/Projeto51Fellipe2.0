@@ -37,7 +37,7 @@ namespace Projeto51Fellipe2._0
             this.txtDescricao = new System.Windows.Forms.Label();
             this.lblModoPrep = new System.Windows.Forms.Label();
             this.exibIngredientes = new System.Windows.Forms.Label();
-            this.exibMododePreparo = new System.Windows.Forms.Label();
+            this.lblCalorias = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +54,7 @@ namespace Projeto51Fellipe2._0
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Projeto51Fellipe2._0.Properties.Resources.sem_foto;
-            this.pictureBox1.Location = new System.Drawing.Point(485, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(629, 55);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(295, 211);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -73,7 +73,7 @@ namespace Projeto51Fellipe2._0
             // lblTempo
             // 
             this.lblTempo.AutoSize = true;
-            this.lblTempo.Location = new System.Drawing.Point(287, 139);
+            this.lblTempo.Location = new System.Drawing.Point(410, 139);
             this.lblTempo.Name = "lblTempo";
             this.lblTempo.Size = new System.Drawing.Size(35, 13);
             this.lblTempo.TabIndex = 3;
@@ -99,7 +99,7 @@ namespace Projeto51Fellipe2._0
             // lblModoPrep
             // 
             this.lblModoPrep.AutoSize = true;
-            this.lblModoPrep.Location = new System.Drawing.Point(494, 319);
+            this.lblModoPrep.Location = new System.Drawing.Point(639, 286);
             this.lblModoPrep.Name = "lblModoPrep";
             this.lblModoPrep.Size = new System.Drawing.Size(35, 13);
             this.lblModoPrep.TabIndex = 6;
@@ -114,21 +114,21 @@ namespace Projeto51Fellipe2._0
             this.exibIngredientes.TabIndex = 7;
             this.exibIngredientes.Text = "Ingredientes:";
             // 
-            // exibMododePreparo
+            // lblCalorias
             // 
-            this.exibMododePreparo.AutoSize = true;
-            this.exibMododePreparo.Location = new System.Drawing.Point(482, 286);
-            this.exibMododePreparo.Name = "exibMododePreparo";
-            this.exibMododePreparo.Size = new System.Drawing.Size(92, 13);
-            this.exibMododePreparo.TabIndex = 8;
-            this.exibMododePreparo.Text = "Modo de Preparo:";
+            this.lblCalorias.AutoSize = true;
+            this.lblCalorias.Location = new System.Drawing.Point(410, 232);
+            this.lblCalorias.Name = "lblCalorias";
+            this.lblCalorias.Size = new System.Drawing.Size(35, 13);
+            this.lblCalorias.TabIndex = 8;
+            this.lblCalorias.Text = "label1";
             // 
             // FormDetalheReceita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 760);
-            this.Controls.Add(this.exibMododePreparo);
+            this.Controls.Add(this.lblCalorias);
             this.Controls.Add(this.exibIngredientes);
             this.Controls.Add(this.lblModoPrep);
             this.Controls.Add(this.txtDescricao);
@@ -157,6 +157,6 @@ namespace Projeto51Fellipe2._0
         private System.Windows.Forms.Label txtDescricao;
         private System.Windows.Forms.Label lblModoPrep;
         private System.Windows.Forms.Label exibIngredientes;
-        private System.Windows.Forms.Label exibMododePreparo;
+        private System.Windows.Forms.Label lblCalorias;
     }
 }

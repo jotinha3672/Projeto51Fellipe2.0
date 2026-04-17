@@ -32,12 +32,13 @@ namespace Projeto51Fellipe2._0
              string descricao,
              string tempo,
              byte[] imagem,
+             int calorias,
              List<IngredienteReceita> ingredientes){
             lblNome.Text = nome;
             lblCategoria.Text = categoria;
             lblTempo.Text = tempo;
             txtDescricao.Text = descricao;
-            
+            lblCalorias.Text = Convert.ToString(calorias);
 
             // 🖼️ imagem
             if (imagem != null)
@@ -83,7 +84,7 @@ namespace Projeto51Fellipe2._0
                 lblNome.Text = receita.Nome;
                 lblCategoria.Text = receita.Categoria;
                 lblTempo.Text = "⏱ " + receita.Tempo + " min";
-                
+                lblCalorias.Text = Convert.ToString(receita.Calorias) + " Calorias";
                 txtDescricao.Text = receita.Descricao;
             
             if (receita.Imagem != null)
@@ -96,7 +97,9 @@ namespace Projeto51Fellipe2._0
 
             StringBuilder sb = new StringBuilder();
 
-            var passos = receita.ModoPreparo
+            string textoModo = receita.ModoPreparo ?? "";
+
+            var passos = textoModo
                 .Split(new[] { '.', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
             int contador = 1;
@@ -153,8 +156,8 @@ namespace Projeto51Fellipe2._0
             txtDescricao.Font = new Font("Segoe UI", 15);
             lblModoPrep.Font = new Font("Segoe UI", 15);
             lblTempo.Font = new Font("Segoe UI", 15);
+            lblCalorias.Font = new Font("Segoe UI", 15);
             exibIngredientes.Font = new Font("Segoe UI", 15);
-            exibMododePreparo.Font = new Font("Segoe UI", 15);
             flowIngredientes.FlowDirection = FlowDirection.TopDown;
             flowIngredientes.WrapContents = false;
             flowIngredientes.AutoScroll = true;
