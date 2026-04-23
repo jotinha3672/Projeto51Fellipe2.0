@@ -19,7 +19,7 @@ namespace Projeto51Fellipe2._0
             InitializeComponent();
         }
 
-        
+
 
         // 🔥 EXIBE O CARDÁPIO ESTRUTURADO
         private void ExibirCardapio(CardapioDia cardapio)
@@ -32,17 +32,23 @@ namespace Projeto51Fellipe2._0
                 return;
             }
 
-            // ☀️ Café
             AdicionarTitulo("☀️ Café da manhã");
             AdicionarCard(cardapio.Cafe);
 
-            // 🍽️ Almoço
+            AdicionarTitulo("🍎 Lanche da manhã");
+            AdicionarCard(cardapio.LancheManha);
+
             AdicionarTitulo("🍽️ Almoço");
             AdicionarCard(cardapio.Almoco);
 
-            // 🌙 Jantar
+            AdicionarTitulo("🥪 Lanche da tarde");
+            AdicionarCard(cardapio.LancheTarde);
+
             AdicionarTitulo("🌙 Jantar");
             AdicionarCard(cardapio.Jantar);
+
+            AdicionarTitulo("🌜 Ceia");
+            AdicionarCard(cardapio.Ceia);
 
             // 🔥 Total
             Label total = new Label();
@@ -95,7 +101,6 @@ namespace Projeto51Fellipe2._0
 
         private void btnGerar_Click_1(object sender, EventArgs e)
         {
-            
             int limite;
 
             if (!int.TryParse(txtCalorias.Text, out limite))
@@ -105,8 +110,13 @@ namespace Projeto51Fellipe2._0
             }
 
             var cafes = _r.BuscarPorCategoriaSimples(1);
+            var lancheManha = _r.BuscarPorCategoriaSimples(9);
             var almocos = _r.BuscarPorCategoriaSimples(7);
+            var lancheTarde = _r.BuscarPorCategoriaSimples(6);
             var jantares = _r.BuscarPorCategoriaSimples(8);
+            var ceias = _r.BuscarPorCategoriaSimples(10);
+
+
 
             if (cafes.Count == 0 || almocos.Count == 0 || jantares.Count == 0)
             {
@@ -116,7 +126,8 @@ namespace Projeto51Fellipe2._0
 
             var gerador = new GeradorCardapio();
 
-            var resultado = gerador.Gerar(limite, cafes, almocos, jantares);
+            var resultado = gerador.Gerar(limite,
+                cafes, lancheManha, almocos, lancheTarde, jantares, ceias);
 
             ExibirCardapio(resultado);
         }

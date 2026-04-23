@@ -9,8 +9,12 @@ namespace Projeto51Fellipe2._0
     public class CardapioDia
     {
         public Receita Cafe { get; set; }
+        public Receita LancheManha { get; set; }
         public Receita Almoco { get; set; }
+        public Receita LancheTarde { get; set; }
         public Receita Jantar { get; set; }
+        public Receita Ceia { get; set; }
         public int TotalCalorias { get; set; }
+
     }
 }

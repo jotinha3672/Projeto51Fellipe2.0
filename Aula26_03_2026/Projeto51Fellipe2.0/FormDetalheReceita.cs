@@ -86,7 +86,7 @@ namespace Projeto51Fellipe2._0
                 lblTempo.Text = "⏱ " + receita.Tempo + " min";
                 lblCalorias.Text = Convert.ToString(receita.Calorias) + " Calorias";
                 txtDescricao.Text = receita.Descricao;
-            
+                lblModoPrep.Text = receita.ModoPreparo;
             if (receita.Imagem != null)
                 {
                     using (var ms = new MemoryStream(receita.Imagem))
@@ -94,26 +94,6 @@ namespace Projeto51Fellipe2._0
                         pictureBox1.Image = Image.FromStream(ms);
                     }
                 }
-
-            StringBuilder sb = new StringBuilder();
-
-            string textoModo = receita.ModoPreparo ?? "";
-
-            var passos = textoModo
-                .Split(new[] { '.', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-
-            int contador = 1;
-
-            foreach (var passo in passos)
-            {
-                if (!string.IsNullOrWhiteSpace(passo))
-                {
-                    sb.AppendLine($"{contador}. {passo.Trim()}");
-                    contador++;
-                }
-            }
-
-            lblModoPrep.Text = "Modo de Preparo:\n\n" + sb.ToString();
 
             // ingredientes (igual você já faz)
 

@@ -47,6 +47,8 @@ namespace Projeto51Fellipe2._0
             this.rbCafeTarde = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.rbJantar = new System.Windows.Forms.RadioButton();
+            this.rbLancheManha = new System.Windows.Forms.RadioButton();
+            this.rbCeia = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,7 +99,7 @@ namespace Projeto51Fellipe2._0
             // rbSobremesa
             // 
             this.rbSobremesa.AutoSize = true;
-            this.rbSobremesa.Location = new System.Drawing.Point(33, 321);
+            this.rbSobremesa.Location = new System.Drawing.Point(33, 315);
             this.rbSobremesa.Name = "rbSobremesa";
             this.rbSobremesa.Size = new System.Drawing.Size(78, 17);
             this.rbSobremesa.TabIndex = 6;
@@ -108,7 +110,7 @@ namespace Projeto51Fellipe2._0
             // rbRapido
             // 
             this.rbRapido.AutoSize = true;
-            this.rbRapido.Location = new System.Drawing.Point(33, 389);
+            this.rbRapido.Location = new System.Drawing.Point(33, 377);
             this.rbRapido.Name = "rbRapido";
             this.rbRapido.Size = new System.Drawing.Size(87, 17);
             this.rbRapido.TabIndex = 7;
@@ -119,7 +121,7 @@ namespace Projeto51Fellipe2._0
             // rbAte30
             // 
             this.rbAte30.AutoSize = true;
-            this.rbAte30.Location = new System.Drawing.Point(33, 457);
+            this.rbAte30.Location = new System.Drawing.Point(30, 501);
             this.rbAte30.Name = "rbAte30";
             this.rbAte30.Size = new System.Drawing.Size(95, 17);
             this.rbAte30.TabIndex = 8;
@@ -130,7 +132,7 @@ namespace Projeto51Fellipe2._0
             // rb30a60
             // 
             this.rb30a60.AutoSize = true;
-            this.rb30a60.Location = new System.Drawing.Point(33, 491);
+            this.rb30a60.Location = new System.Drawing.Point(30, 532);
             this.rb30a60.Name = "rb30a60";
             this.rb30a60.Size = new System.Drawing.Size(128, 17);
             this.rb30a60.TabIndex = 9;
@@ -141,7 +143,7 @@ namespace Projeto51Fellipe2._0
             // rbMais60
             // 
             this.rbMais60.AutoSize = true;
-            this.rbMais60.Location = new System.Drawing.Point(33, 525);
+            this.rbMais60.Location = new System.Drawing.Point(30, 563);
             this.rbMais60.Name = "rbMais60";
             this.rbMais60.Size = new System.Drawing.Size(96, 17);
             this.rbMais60.TabIndex = 10;
@@ -192,7 +194,7 @@ namespace Projeto51Fellipe2._0
             // rbAlmoco
             // 
             this.rbAlmoco.AutoSize = true;
-            this.rbAlmoco.Location = new System.Drawing.Point(35, 287);
+            this.rbAlmoco.Location = new System.Drawing.Point(35, 284);
             this.rbAlmoco.Name = "rbAlmoco";
             this.rbAlmoco.Size = new System.Drawing.Size(60, 17);
             this.rbAlmoco.TabIndex = 15;
@@ -203,7 +205,7 @@ namespace Projeto51Fellipe2._0
             // rbCafeTarde
             // 
             this.rbCafeTarde.AutoSize = true;
-            this.rbCafeTarde.Location = new System.Drawing.Point(33, 423);
+            this.rbCafeTarde.Location = new System.Drawing.Point(33, 408);
             this.rbCafeTarde.Name = "rbCafeTarde";
             this.rbCafeTarde.Size = new System.Drawing.Size(93, 17);
             this.rbCafeTarde.TabIndex = 17;
@@ -226,7 +228,7 @@ namespace Projeto51Fellipe2._0
             // rbJantar
             // 
             this.rbJantar.AutoSize = true;
-            this.rbJantar.Location = new System.Drawing.Point(35, 355);
+            this.rbJantar.Location = new System.Drawing.Point(35, 346);
             this.rbJantar.Name = "rbJantar";
             this.rbJantar.Size = new System.Drawing.Size(54, 17);
             this.rbJantar.TabIndex = 19;
@@ -234,11 +236,35 @@ namespace Projeto51Fellipe2._0
             this.rbJantar.Text = "Jantar";
             this.rbJantar.UseVisualStyleBackColor = true;
             // 
+            // rbLancheManha
+            // 
+            this.rbLancheManha.AutoSize = true;
+            this.rbLancheManha.Location = new System.Drawing.Point(30, 439);
+            this.rbLancheManha.Name = "rbLancheManha";
+            this.rbLancheManha.Size = new System.Drawing.Size(111, 17);
+            this.rbLancheManha.TabIndex = 20;
+            this.rbLancheManha.TabStop = true;
+            this.rbLancheManha.Text = "Lanche da manhã";
+            this.rbLancheManha.UseVisualStyleBackColor = true;
+            // 
+            // rbCeia
+            // 
+            this.rbCeia.AutoSize = true;
+            this.rbCeia.Location = new System.Drawing.Point(32, 470);
+            this.rbCeia.Name = "rbCeia";
+            this.rbCeia.Size = new System.Drawing.Size(46, 17);
+            this.rbCeia.TabIndex = 21;
+            this.rbCeia.TabStop = true;
+            this.rbCeia.Text = "Ceia";
+            this.rbCeia.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1058, 631);
+            this.Controls.Add(this.rbCeia);
+            this.Controls.Add(this.rbLancheManha);
             this.Controls.Add(this.rbJantar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.rbCafeTarde);
@@ -288,6 +314,8 @@ namespace Projeto51Fellipe2._0
         private System.Windows.Forms.RadioButton rbCafeTarde;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RadioButton rbJantar;
+        private System.Windows.Forms.RadioButton rbLancheManha;
+        private System.Windows.Forms.RadioButton rbCeia;
     }
 }
 

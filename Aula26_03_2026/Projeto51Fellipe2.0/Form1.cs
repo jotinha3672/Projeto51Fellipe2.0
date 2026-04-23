@@ -106,6 +106,8 @@ namespace Projeto51Fellipe2._0
             if (rbCafeTarde.Checked) return 6;
             if (rbAlmoco.Checked) return 7;
             if (rbJantar.Checked) return 8;
+            if (rbLancheManha.Checked) return 9;
+            if (rbCeia.Checked) return 10;
 
             return null; // todos
         }
